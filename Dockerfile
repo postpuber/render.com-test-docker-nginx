@@ -1,6 +1,7 @@
-FROM nginx:alpine
-# copy over static assets
-COPY public/ /usr/share/nginx/html/
+FROM smebberson/alpine-nginx-nodejs
+WORKDIR /app
 COPY nginx.conf /etc/nginx/conf.d/default.conf
-
-CMD nginx -g 'daemon off;'
+COPY . .
+RUN npm i
+EXPOSE 80
+CMD node index
