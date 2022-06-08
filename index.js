@@ -12,5 +12,8 @@ app.get('/', (req, res) => {
   res.send('Hello World');
 });
 
+app.get('/health_check', (req, res) => {
+  res.send('200 OK');
+});
+
 app.listen(PORT, HOST);
-console.log(`Running on http://${HOST}:${PORT}`);
