@@ -1,4 +1,4 @@
-FROM smebberson/alpine-nginx-nodejs
+FROM nginx
 WORKDIR /app
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY . .
